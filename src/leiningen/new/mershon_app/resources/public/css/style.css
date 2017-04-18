@@ -1,0 +1,39 @@
+/* Navbar */
+.navbar {
+  background-color: #222;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+.navbar .container {
+  width: 100%;
+}
+.navbar-default .navbar-nav > li >a {
+  color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #008799;
+}
+.navbar .nav-logo {
+  width: 120px;
+  margin: 0;
+  margin-top: -9px;
+}
+
+
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.8em;
+  color: #fff;
+  background-color: #008799;
+  height: 40px;
+  width: 100%;
+  padding-top: 10px;
+  position: absolute;
+  bottom: 0;
+}
+footer p {
+  color: #222;
+  font-size: 14px;
+}

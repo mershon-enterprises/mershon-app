@@ -1,0 +1,60 @@
+{; core clojure
+ ->             ^:replace [[:block 0]]
+ catch          ^:replace [[:inner 0]]
+ cond->         ^:replace [[:block 0]]
+ do             ^:replace [[:inner 0]]
+ if             ^:replace [[:inner 0]]
+ if-let         ^:replace [[:inner 0]]
+ if-not         ^:replace [[:inner 0]]
+ if-some        ^:replace [[:block 1]]
+ let            ^:replace [[:inner 0]]
+ locking        ^:replace [[:inner 0]]
+ not-empty                [[:block 0]]
+ reduce                   [[:block 0]]
+ reduce-kv                [[:block 0]]
+ testing        ^:replace [[:block 0]]
+ try            ^:replace [[:inner 0]]
+ when-let       ^:replace [[:inner 0]]
+ with-redefs    ^:replace [[:block 0]]
+ with-redefs-fn           [[:block 0]]
+
+ ; ring
+ response                 [[:inner 0]]
+ GET            ^:replace [[:block 0]]
+ POST           ^:replace [[:block 0]]
+ PUT            ^:replace [[:block 0]]
+ PATCH          ^:replace [[:block 0]]
+ OPTIONS        ^:replace [[:block 0]]
+
+ ; omcljs
+ build                    [[:block 0]]
+ init-state               [[:block 0]]
+ render                   [[:block 0]]
+ render-state             [[:block 0]]
+ root                     [[:block 0]]
+ will-mount               [[:block 1]]
+
+ ; secretary
+ to-interceptor           [[:block 0]]
+
+ ; html/om-bootstrap
+ button                   [[:block 0]]
+ button-group             [[:block 0]]
+ div                      [[:block 0]]
+ input                    [[:block 0]]
+ select                   [[:block 0]]
+ span                     [[:block 0]]
+ table                    [[:block 0]]
+ tbody                    [[:block 0]]
+ td                       [[:block 0]]
+ tr                       [[:block 0]]
+
+ ; devcards
+ defcard                  [[:inner 0]]
+ defcard-om               [[:inner 0]]
+
+ ; {{ns-name}}
+ guard                    [[:inner 0]]
+ try-catch-response       [[:block 0]]
+ user-is                  [[:block 0]]
+ wrap-response            [[:block 0]]}
