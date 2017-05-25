@@ -42,7 +42,7 @@
 
                  [devcards "0.2.2"]]
 
-  :plugins [[lein-cljsbuild "1.1.3"]
+  :plugins [[lein-cljsbuild "1.1.6"]
             [lein-environ "1.0.3"]
             [lein-test-out "0.3.1"]
             [lein-cljfmt "0.5.6"] ]
