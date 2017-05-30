@@ -78,7 +78,7 @@
                 ;; :figwheel {:on-jsload "{{ns-name}}.core/on-figwheel-reload"}
 
                 :compiler {:main {{ns-name}}.core
-                           :asset-path "js/compiled/out"
+                           :asset-path "/js/compiled/out"
                            :output-to "resources/public/js/compiled/{{sanitized}}.js"
                            :output-dir "resources/public/js/compiled/out"
                            :source-map-timestamp true}}
