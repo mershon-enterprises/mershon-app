@@ -86,7 +86,7 @@
                {:id "devcards"
                 :source-paths ["src/cljs" "src/cljc"]
                 :figwheel {:devcards true
-                           :open-urls ["http://localhost:3452/cards.html"]}
+                           :open-urls ["http://localhost:3449/cards.html"]}
                 :compiler {:main {{ns-name}}.core
                            :asset-path "js/compiled/devcards_out"
                            :output-to "resources/public/js/compiled/{{sanitized}}_devcards.js"
@@ -153,7 +153,7 @@
               :env {:hostproto    "http"
                     :hostname     "localhost"
                     :rds-hostname "localhost"
-                    :rds-port     "5432"
+                    :rds-port     "3449"
                     :rds-db-name  "{{sanitized}}"
                     :rds-username "postgres"
                     :rds-password "password"

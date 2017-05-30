@@ -1,7 +1,7 @@
 (ns {{ns-name}}.config)
 
 (defonce dev-config     {:host  "localhost"
-                         :port  3453
+                         :port  3449
                          :proto "http"})
 (defonce staging-config {:host  "TBD"
                          :port  80
