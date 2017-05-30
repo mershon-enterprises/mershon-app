@@ -153,7 +153,7 @@
               :env {:hostproto    "http"
                     :hostname     "localhost"
                     :rds-hostname "localhost"
-                    :rds-port     "3449"
+                    :rds-port     "5432"
                     :rds-db-name  "{{sanitized}}"
                     :rds-username "postgres"
                     :rds-password "password"
