@@ -16,11 +16,11 @@ Edit your `profiles.clj` file
 ```sh
 vim $HOME/.lein/profiles.clj
 ```
-Add `mershon-app/lein-template "0.0.1"` as a dependency in your `lein/profiles.clj`
+Add `mershon-app/lein-template "0.0.2"` as a dependency in your `lein/profiles.clj`
 __Example__
 ```clj
 {:user {:plugins [[cider/cider-nrepl "0.14.0"]
-                  [mershon-app/lein-template "0.0.1"]]}}
+                  [mershon-app/lein-template "0.0.2"]]}}
 ```
 
 Restart your terminal session and run `lein new mershon-app {{project-name}}`
