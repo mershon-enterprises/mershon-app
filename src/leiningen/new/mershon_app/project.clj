@@ -156,7 +156,12 @@
                     :rds-port     "5432"
                     :rds-db-name  "{{sanitized}}"
                     :rds-username "postgres"
-                    :rds-password "password"}
+                    :rds-password "password"
+
+                    :patchwork-base-url           "https://patchwork.mershonenterprises.com"
+                    :patchwork-account-id         "ACCOUNT_ID"
+                    :patchwork-api-key            "API_KEY"
+                    :patchwork-logger-platform-id ""}
 
               :plugins [[lein-figwheel "0.5.9"]
                         [lein-doo "0.1.6"]

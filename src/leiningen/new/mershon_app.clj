@@ -24,6 +24,7 @@
              ["resources/public/images/nav-logo.png" (render "resources/public/images/nav-logo.png")]
              ["resources/public/index.html" (render "resources/public/index.html" data)]
              ["resources/queries/.git-keep" (render "resources/queries/.git-keep")]
+             ["src/clj/patchwork.clj" (render "src/clj/patchwork.clj" data)]
              ["src/clj/{{sanitized}}/schema.clj" (render "src/clj/mershon_app/schema.clj" data)]
              ["src/clj/{{sanitized}}/server.clj" (render "src/clj/mershon_app/server.clj" data)]
              ["src/cljc/{{sanitized}}/common.cljc" (render "src/cljc/mershon_app/common.cljc" data)]

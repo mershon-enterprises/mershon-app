@@ -1,4 +1,4 @@
-(defproject mershon-app/lein-template "0.0.1"
+(defproject mershon-app/lein-template "0.0.2"
   :description "Template for creating Mershon Enterprises Clojure apps"
   :url "https://github.com/mershon-enterprises/mershon-app"
   :license {:name "GNU General Public License"

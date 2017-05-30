@@ -3,7 +3,7 @@
   <groupId>mershon-app</groupId>
   <artifactId>lein-template</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <name>lein-template</name>
   <description>Template for creating Mershon Enterprises Clojure apps</description>
   <url>https://github.com/mershon-enterprises/mershon-app</url>
