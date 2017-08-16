@@ -42,7 +42,7 @@
 
                  [devcards "0.2.2"]]
 
-  :plugins [[lein-cljsbuild "1.1.3"]
+  :plugins [[lein-cljsbuild "1.1.4"]
             [lein-environ "1.0.3"]
             [lein-test-out "0.3.1"]
             [lein-cljfmt "0.5.6"] ]
@@ -158,10 +158,10 @@
                     :rds-username "postgres"
                     :rds-password "password"
 
-                    :patchwork-base-url           "https://patchwork.mershonenterprises.com"
-                    :patchwork-account-id         "ACCOUNT_ID"
-                    :patchwork-api-key            "API_KEY"
-                    :patchwork-logger-platform-id ""}
+                    :patchwork-base-url            "https://patchwork.mershonenterprises.com"
+                    :patchwork-application         "APPLICATION"
+                    :patchwork-token               "TOKEN"
+                    :patchwork-logger-platform-uid ""}
 
               :plugins [[lein-figwheel "0.5.9"]
                         [lein-doo "0.1.6"]

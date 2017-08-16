@@ -6,31 +6,31 @@
 (defonce config (atom {}))
 
 (defn init
-  [{:keys [base-url account-id api-key] :as args}]
+  [{:keys [base-url application token] :as args}]
   (reset! config args))
-(init {:base-url   (:patchwork-base-url   env)
-       :account-id (:patchwork-account-id env)
-       :api-key    (:patchwork-api-key    env)})
+(init {:base-url    (:patchwork-base-url    env)
+       :application (:patchwork-application env)
+       :token       (:patchwork-token       env)})
 
 (defn call-platform-method
-  [{:keys [platform-id http-action platform-method params] :as args}]
+  [{:keys [platform http-action platform-method params] :as args}]
 
-  (let [{base-url   :base-url
-         account-id :account-id
-         api-key    :api-key} @config
-        callable              (case (.toLowerCase http-action)
-                                "post"   client/post
-                                "get"    client/get
-                                "put"    client/put
-                                "delete" client/delete)]
+  (let [{base-url    :base-url
+         application :application
+         token       :token} @config
+        callable             (case (.toLowerCase http-action)
+                               "post"   client/post
+                               "get"    client/get
+                               "put"    client/put
+                               "delete" client/delete)]
     (let [response (callable
-                    (str base-url      "/api"
-                         "/account/"   account-id
-                         "/platforms/" platform-id
-                         "/"           platform-method)
+                    (str base-url         "/api"
+                         "/applications/" application
+                         "/"              platform
+                         "/"              platform-method)
                     (assoc {:content-type :json
                             :throw-exceptions false
-                            :headers {"Authorization" api-key}}
+                            :headers {"Authorization" token}}
                            (if (= "get" http-action)
                              :query-params
                              :form-params)
@@ -45,7 +45,8 @@
 (defn log
   [{:keys [level message data] :as args}]
   (call-platform-method
-   {:platform-id (:patchwork-logger-platform-id env)
+   {:platform (:patchwork-logger-platform-uid env)
     :http-action "post"
     :platform-method level
-    :params (dissoc args :level)}))
+    :params {:message message
+             :data data}}))
