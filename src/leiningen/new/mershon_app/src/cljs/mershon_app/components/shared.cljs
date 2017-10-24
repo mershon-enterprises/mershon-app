@@ -18,12 +18,20 @@
 
 (defn value-setter!
   "Helper method for updating state on a component"
-  [cursor k]
+  [cursor k & {:keys [int? float?] :or {int?   false
+                                        float? false}}]
   (fn [ev]
-    (set-value! cursor k (.. ev -target -value))))
+    (set-value! cursor k (let [v (.. ev -target -value)]
+                           (cond
+                             int?
+                             (js/parseInt v)
+                             float?
+                             (js/parseFloat v)
+                             :else
+                             v)))))
 
 (s/def ::label (s/and string? #(pos? (count %))))
-(s/def ::value (s/and string? #(pos? (count %))))
+(s/def ::value string?)
 (s/def ::option-args (s/keys :req-un [::label ::value]))
 (defn option
   [{:keys [value label] :as args}]
@@ -38,9 +46,10 @@
          label))
 
 (defn select
-  [{:keys [class on-change default-value]} body]
+  [{:keys [id class on-change default-value]} body]
   (apply dom/select
-         #js{:className class
+         #js{:id        id
+             :className class
              :value     (or default-value "undefined")
              :onInput   on-change}
          body))

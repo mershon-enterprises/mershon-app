@@ -14,6 +14,9 @@
             [compojure.core :refer [ANY GET PUT POST DELETE OPTIONS context defroutes]]
             [compojure.route :refer [resources]]
 
+            [{{ns-name}}.routes.opengraph :refer [opengraph-index-routes]]
+            [{{ns-name}}.routes.version :refer [version-routes]]
+
             [{{ns-name}}.schema :as schema])
   (:gen-class))
 
@@ -29,16 +32,13 @@
           ;                    "Access-Control-Allow-Headers" (get headers "access-control-request-headers")}})
 
           ; add child contexts here
-)
+          version-routes)
         wrap-json-response
         wrap-keyword-params
         wrap-json-params))
 
   ; any route not predefined should kick to the index page
-  (GET "*" _
-       {:status 200
-        :headers {"Content-Type" "text/html; charset=utf-8"}
-        :body (io/input-stream (io/resource "public/index.html"))}))
+  opengraph-index-routes)
 
 (def http-handler
   (-> routes

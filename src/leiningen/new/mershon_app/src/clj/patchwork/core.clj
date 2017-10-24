@@ -1,4 +1,4 @@
-(ns patchwork
+(ns patchwork.core
   (:require [environ.core :refer [env]]
             [clj-http.client :as client]
             [cheshire.core :refer [parse-string]]))

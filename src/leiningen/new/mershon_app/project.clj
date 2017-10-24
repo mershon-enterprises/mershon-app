@@ -20,6 +20,8 @@
                  [ring/ring-json "0.4.0"]
                  [ring-json-response "0.2.0"]
                  [org.clojure/data.json "0.2.6"]
+                 [buddy/buddy-auth "2.1.0"]
+                 [hbs "0.9.0"] ; handlebars templating
 
                  ; logging
                  [org.slf4j/slf4j-api "1.7.5"]
@@ -157,6 +159,7 @@
                     :rds-db-name  "{{sanitized}}"
                     :rds-username "postgres"
                     :rds-password "password"
+                    :auth-secret  "supersecret"
 
                     :patchwork-base-url            "https://patchwork.mershonenterprises.com"
                     :patchwork-application         "APPLICATION"

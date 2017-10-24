@@ -24,15 +24,18 @@
       (d/div
         {:id "container"}
         (om/build navbar root-state {:opts {:on-select-handler nav!}})
-        (d/div {:class "container"}
+        (d/div {:id "body-div"}
                (case (:path route)
                  "index"
                  (d/div (d/h1 "Hello {{ns-name}}"))
 
                  "login"
-                 (om/build login-page/main {})))))))
+                 (om/build login-page/main {})))
+        (d/footer
+          (d/p "© 2017 {{ns-name}} All Rights Reserved."))))))
 
-(om/root
-  root-component
-  app-state/state
-  {:target (js/document.getElementById "app")})
+(when-let [container (js/document.getElementById "app")]
+ (om/root
+   root-component
+   app-state/state
+   {:target (js/document.getElementById "app")}))

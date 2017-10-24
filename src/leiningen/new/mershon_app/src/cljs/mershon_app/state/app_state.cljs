@@ -37,12 +37,10 @@
 (def token-interceptor
   (to-interceptor {:name "Token Interceptor"
                    :request (fn [request]
-                              (let [{token :id client-uuid :client-uuid}
-                                    (get-in @state [:session :token])
+                              (let [token (get-in @state [:session :token])
                                     headers (:headers request)
                                     with-token (assoc headers
-                                                      :token token
-                                                      :client-uuid client-uuid)]
+                                                      :authorization (str "Token " token))]
                                 (assoc request :headers with-token)))}))
 (swap! default-interceptors (partial cons token-interceptor))
 
@@ -55,15 +53,11 @@
                              (assoc m (.toLowerCase k) v))
                            {}
                            (js->clj (.getResponseHeaders xhrio)))
-                 token (get headers "token")
-                 client-uuid (get headers "client-uuid")]
+                 token (get headers "token")]
 
              ; only update the token when one is returned
-             (when (and token client-uuid)
-               (swap! state assoc-in [:session :token]
-                      {:client-uuid client-uuid
-                       :id token
-                       :expiration-date (get headers "token-expiration-date")})
+             (when token
+               (swap! state assoc-in [:session :token] token)
                (write-session!))
              (js->clj json :keywordize-keys true)))
    :description "JSON-headers"})
