@@ -24,7 +24,7 @@
       (d/div
         {:id "container"}
         (om/build navbar root-state {:opts {:on-select-handler nav!}})
-        (d/div {:id "body-div"}
+        (d/div {:id "bodydiv"}
                (case (:path route)
                  "index"
                  (d/div (d/h1 "Hello {{ns-name}}"))
