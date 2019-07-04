@@ -20,7 +20,7 @@ Add `mershon-app/lein-template "0.0.2"` as a dependency in your `lein/profiles.c
 __Example__
 ```clj
 {:user {:plugins [[cider/cider-nrepl "0.14.0"]
-                  [mershon-app/lein-template "0.0.2"]]}}
+                  [mershon-app/lein-template "0.0.4"]]}}
 ```
 
 Restart your terminal session and run `lein new mershon-app {{project-name}}`
